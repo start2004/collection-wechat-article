@@ -1,0 +1,22 @@
+{
+  "name": "Kahn",
+  "description": "collection-wechat-article",
+  "version": "1.0.0",
+  "background": {
+    "persistent": true,
+    "scripts": [ "bg.js" ]
+  },
+  "content_scripts": [{
+    "all_frames": true,
+    "js": ["end.js"],
+    "match_about_blank": true,
+    "matches": [ "http://*/*", "https://*/*" ],
+    "run_at": "document_end"
+  }],
+  "icons": {
+    "128": "icon.png"
+  },
+  "manifest_version": 2,
+  "permissions": [ "tabs", "http://*/*", "https://*/*", "contextMenus", "webRequest", "webRequestBlocking", "webNavigation", "storage", "unlimitedStorage", "notifications", "idle", "alarms" ],
+  "web_accessible_resources": [ "wx/index.js"]
+}
